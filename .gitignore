@@ -3,3 +3,4 @@ venv/
 **/*pychache
 **/*_cache
 .env
+.json
