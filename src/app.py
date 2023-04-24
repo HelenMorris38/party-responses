@@ -22,10 +22,8 @@ def party_responses():
             print('Thank you! Your response has been recorded.')
             with open(filename, 'w') as f:
                 responses.append(person)
-                json.dump(responses, f)
+                json.dump(responses, f, indent=4)
             print(responses)
 party_responses()
 
-def list_of_dicts_to_json(list_of_dicts):
-    return json.dumps(list_of_dicts, indent=4, default=str)
 
