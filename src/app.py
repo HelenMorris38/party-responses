@@ -5,6 +5,7 @@ def party_responses():
     filename = 'party-responses.json'
     with open(filename, 'w') as f:
         json.dump(responses, f)
+
     count = 0
     while True:
         count += 1
@@ -24,6 +25,7 @@ def party_responses():
                 responses.append(person)
                 json.dump(responses, f, indent=4)
             print(responses)
+
 party_responses()
 
 
