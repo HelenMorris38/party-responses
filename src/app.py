@@ -3,8 +3,8 @@ import json
 def party_responses():
     responses = []
     filename = 'party-responses.json'
-    with open(filename, 'w') as f:
-        json.dump(responses, f)
+    # with open(filename, 'a') as f:
+    #     json.dump(responses, f)
 
     count = 0
     while True:
@@ -21,7 +21,7 @@ def party_responses():
             person['name'] = name
             person['response'] = response
             print('Thank you! Your response has been recorded.')
-            with open(filename, 'w') as f:
+            with open(filename, 'a') as f:
                 responses.append(person)
                 json.dump(responses, f, indent=4)
             print(responses)
