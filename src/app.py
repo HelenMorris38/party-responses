@@ -5,7 +5,7 @@ def party_responses():
     responses = { "invites" : []}
     filename = 'party-responses.json'
     if not filename.exists():
-        with open(filename, 'a') as f:
+        with open(filename, 'w') as f:
             json.dump(responses, f, indent=4)
     
     count = 0
