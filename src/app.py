@@ -1,7 +1,7 @@
 import json
 
 def party_responses():
-    responses = []
+    responses = { "invites" : []}
     filename = 'party-responses.json'
     # with open(filename, 'a') as f:
     #     json.dump(responses, f)
@@ -12,8 +12,8 @@ def party_responses():
         name = input('What is your name?\nEnter q at anytime to quit.\n')
         if name == 'q':
             break
-        response = input('Can you come to the party?\nPlease enter yes or no.\n')
-        if response == 'q':
+        able_to_attend = input('Can you come to the party?\nPlease enter yes or no.\n')
+        if able_to_attend == 'q':
             break
         else:
             person = {}
