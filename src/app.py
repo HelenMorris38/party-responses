@@ -1,12 +1,15 @@
 import json
-from os.path import exists
+from os import path
 
 def party_responses():
-    responses = { "invites" : []}
+    responses = []
     filename = 'party-responses.json'
-    if not filename.exists():
+    if not path.isfile(filename):
         with open(filename, 'w') as f:
             json.dump(responses, f, indent=4)
+    
+    with open(filename) as f:
+        responses = json.load(f)
     
     count = 0
     while True:
@@ -22,17 +25,13 @@ def party_responses():
             person['id'] = str(count).zfill(3)
             person['name'] = name
             person['response'] = able_to_attend
-            responses['invites'].append(person)
             print('Thank you! Your response has been recorded.')
-            # with open(filename, 'a') as f:
-            #     responses['invites'].append(person)
-            #     json.dump(responses['invites'], f, indent=4)
-            # print(responses)
-    
+            responses.append(person)
+            print(responses)
 
-
-
-
+    with open(filename, 'w') as f:
+        json.dump(responses, f, indent=4)
+        
 party_responses()
 
 
