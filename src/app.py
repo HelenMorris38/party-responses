@@ -22,7 +22,6 @@ def party_responses():
             break
         else:
             person = {}
-            person['id'] = str(count).zfill(3)
             person['name'] = name
             person['response'] = able_to_attend
             print('Thank you! Your response has been recorded.')
@@ -31,7 +30,7 @@ def party_responses():
 
     with open(filename, 'w') as f:
         json.dump(responses, f, indent=4)
-        
+
 party_responses()
 
 
