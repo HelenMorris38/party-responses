@@ -3,8 +3,6 @@ import json
 def party_responses():
     responses = { "invites" : []}
     filename = 'party-responses.json'
-    # with open(filename, 'a') as f:
-    #     json.dump(responses, f)
 
     count = 0
     while True:
@@ -19,12 +17,15 @@ def party_responses():
             person = {}
             person['id'] = str(count).zfill(3)
             person['name'] = name
-            person['response'] = response
+            person['response'] = able_to_attend
+            responses['invites'].append(person)
             print('Thank you! Your response has been recorded.')
-            with open(filename, 'a') as f:
-                responses.append(person)
-                json.dump(responses, f, indent=4)
-            print(responses)
+            # with open(filename, 'a') as f:
+            #     responses['invites'].append(person)
+            #     json.dump(responses['invites'], f, indent=4)
+            # print(responses)
+    with open(filename, 'a') as f:
+        json.dump(responses, f, indent=4)
 
 party_responses()
 
