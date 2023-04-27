@@ -1,9 +1,13 @@
 import json
+from os.path import exists
 
 def party_responses():
     responses = { "invites" : []}
     filename = 'party-responses.json'
-
+    if not filename.exists():
+        with open(filename, 'a') as f:
+            json.dump(responses, f, indent=4)
+    
     count = 0
     while True:
         count += 1
@@ -24,8 +28,10 @@ def party_responses():
             #     responses['invites'].append(person)
             #     json.dump(responses['invites'], f, indent=4)
             # print(responses)
-    with open(filename, 'a') as f:
-        json.dump(responses, f, indent=4)
+    
+
+
+
 
 party_responses()
 
