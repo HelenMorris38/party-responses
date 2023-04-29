@@ -31,5 +31,3 @@ while True:
     else:
         party_responses(name, able_to_attend)
         print('Thank you! Your response has been recorded.')
-
-
