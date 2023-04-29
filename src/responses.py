@@ -5,11 +5,10 @@ with open('party-responses.json', 'r', encoding='utf-8') as responses:
     yes_count = 0
     no_count = 0
     waiting_response = 0
-    for line in read_responses:
-        print(line)
-        if line['response'] == 'yes':
+    for person in read_responses:
+        if person['response'] == 'yes':
             yes_count += 1
-        elif line['response'] == 'no':
+        elif person['response'] == 'no':
             no_count += 1
         else:
             waiting_response += 1
