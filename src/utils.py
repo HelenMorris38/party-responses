@@ -2,6 +2,12 @@ import json
 from os import path
 
 def party_responses(name, response):
+    """This function takes two strings, adds them to a dictionary with the keys of name and response, then appends this dictionary to a list.
+    The list of dictionaries is saved in a JSON file.
+    Args:
+        name (string)
+        response (string)
+    """
     responses = []
     filename = 'party-responses.json'
     if not path.isfile(filename):
