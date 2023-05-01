@@ -11,7 +11,7 @@ def party_responses(name, response):
     with open(filename) as f:
         responses = json.load(f)
         person = {}
-        person['name'] = name
+        person['name'] = name.title()
         person['response'] = response
         responses.append(person)
 
