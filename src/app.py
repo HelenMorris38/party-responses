@@ -1,5 +1,6 @@
 from src.utils import party_responses
 
+filename = 'party-responses.json'
 count = 0
 while True:
     count += 1
@@ -10,5 +11,5 @@ while True:
     if able_to_attend == 'q':
         break
     else:
-        party_responses(name, able_to_attend)
+        party_responses(name, able_to_attend, filename)
         print('Thank you! Your response has been recorded.')
