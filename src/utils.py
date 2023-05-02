@@ -7,15 +7,13 @@ def create_json_file(filename):
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
 
-def party_responses(name, response):
+def party_responses(name, response, filename):
     """This function takes two strings, adds them to a dictionary with the keys of name and response, then appends this dictionary to a list.
     The list of dictionaries is saved in a JSON file.
     Args:
         - name (string)
         - response (string)
     """
-    responses = []
-    filename = 'party-responses.json'
     if not path.isfile(filename):
         create_json_file(filename)
     
