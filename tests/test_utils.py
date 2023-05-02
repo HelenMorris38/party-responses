@@ -9,9 +9,18 @@ def test_creates_json_file():
 
 def test_party_responses_adds_a_person_to_json():
     party_responses('James', 'yes', 'test-data.json')
-    try:
-        json.load('test-data.json')
-        assert True
-    except:
-        print('Not valid JSON object')
-        assert False
+    with open('test-data.json') as t:
+        test_responses = json.load(t)
+    assert test_responses[0] == {
+        'name' : 'James',
+        'response' : 'yes'
+    }
+
+def test_party_responses_capitalises_name():
+    party_responses('emily', 'yes', 'test-data.json')
+    with open('test-data.json') as t:
+        test_responses = json.load(t)
+    assert test_responses[1] == {
+        'name' : 'Emily',
+        'response' : 'yes'
+    }
