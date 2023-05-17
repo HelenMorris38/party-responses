@@ -14,7 +14,10 @@ with open('party-responses.json', 'r', encoding='utf-8') as responses:
             waiting_response += 1
     
 print(f'{yes_count} children are able to come to the party')
-print(f'{no_count} children are not able to come to the party')
+if no_count == 1:
+    print(f'{no_count} child is not able to come to the party')
+else:
+    print(f'{no_count} children are not able to come to the party')
 if waiting_response == 1:
     print(f'{waiting_response} child is still to reply')
 else:
