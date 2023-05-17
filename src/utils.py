@@ -20,6 +20,7 @@ def party_responses(name, response, filename):
     with open(filename) as f:
         responses = json.load(f)
         person = {}
+        person['id'] = str(len(responses) + 1).zfill(3)
         person['name'] = name.title()
         person['response'] = response
         responses.append(person)
