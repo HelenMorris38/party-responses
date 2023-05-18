@@ -35,5 +35,9 @@ def party_responses(name, response, filename):
 def update_response(id, updated_response, filename):
     responses = get_json_data(filename)
     for person in responses:
-        if id == responses[person]['id']:
+        print(person)
+        if id == person['id']:
             person['response'] = updated_response
+    
+    with open(filename, 'w') as f:
+        json.dump(responses, f, indent=4)
