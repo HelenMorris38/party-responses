@@ -12,6 +12,7 @@ def test_party_responses_adds_a_person_to_json():
     with open('test-data.json') as t:
         test_responses = json.load(t)
     assert test_responses[0] == {
+        'id' : '001',
         'name' : 'James',
         'response' : 'yes'
     }
@@ -21,6 +22,7 @@ def test_party_responses_capitalises_name():
     with open('test-data.json') as t:
         test_responses = json.load(t)
     assert test_responses[1] == {
+        'id' : '002',
         'name' : 'Emily',
         'response' : 'yes'
     }
