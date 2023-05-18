@@ -31,7 +31,6 @@ def party_responses(name, response, filename):
 def update_response(id, updated_response, filename):
     responses = get_json_data(filename)
     for person in responses:
-        print(person)
         if id == person['id']:
             person['response'] = updated_response
     write_to_json(filename, responses)
