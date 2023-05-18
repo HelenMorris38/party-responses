@@ -1,10 +1,10 @@
-from src.utils import party_responses, create_json_file, update_response
+from src.utils import party_responses, write_to_json, update_response
 from unittest.mock import Mock
 from os import path
 import json
 
-def test_creates_json_file():
-    create_json_file('test-data.json')
+def test_writes_to_json_file():
+    write_to_json('test-data.json', [])
     assert path.isfile('test-data.json')
 
 def test_party_responses_adds_a_person_to_json():
