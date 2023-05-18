@@ -12,6 +12,10 @@ def get_json_data(filename):
         responses = json.load(f)
     return responses
 
+def write_to_json(filename, data):
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=4)
+
 def party_responses(name, response, filename):
     """This function takes two strings, adds them to a dictionary with the keys of name and response, then appends this dictionary to a list.
     The list of dictionaries is saved in a JSON file.
