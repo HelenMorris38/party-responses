@@ -1,4 +1,4 @@
-from src.utils import party_responses, create_json_file
+from src.utils import party_responses, create_json_file, update_response
 from unittest.mock import Mock
 from os import path
 import json
@@ -26,3 +26,13 @@ def test_party_responses_capitalises_name():
         'name' : 'Emily',
         'response' : 'yes'
     }
+
+def test_updates_response():
+    update_response('001', 'no', 'test-data.json')
+    with open('test-data.json') as t:
+        test_responses = json.load(t)
+    assert test_responses[0] == {
+        'id' : '001',
+        'name' : 'James',
+        'response' : 'no'
+    } 
