@@ -7,6 +7,11 @@ def create_json_file(filename):
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
 
+def get_json_data(filename):
+    with open(filename) as f:
+        responses = json.load(f)
+    return responses
+
 def party_responses(name, response, filename):
     """This function takes two strings, adds them to a dictionary with the keys of name and response, then appends this dictionary to a list.
     The list of dictionaries is saved in a JSON file.
@@ -17,13 +22,12 @@ def party_responses(name, response, filename):
     if not path.isfile(filename):
         create_json_file(filename)
     
-    with open(filename) as f:
-        responses = json.load(f)
-        person = {}
-        person['id'] = str(len(responses) + 1).zfill(3)
-        person['name'] = name.title()
-        person['response'] = response
-        responses.append(person)
+    responses = get_json_data(filename)
+    person = {}
+    person['id'] = str(len(responses) + 1).zfill(3)
+    person['name'] = name.title()
+    person['response'] = response
+    responses.append(person)
 
     with open(filename, 'w') as f:
         json.dump(responses, f, indent=4)
