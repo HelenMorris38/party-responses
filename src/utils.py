@@ -27,6 +27,7 @@ def party_responses(name, response, filename):
     person['response'] = response
     responses.append(person)
     write_to_json(filename, responses)
+    return person['id']
 
 def update_response(id, updated_response, filename):
     responses = get_json_data(filename)
