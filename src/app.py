@@ -17,6 +17,7 @@ while True:
         else:
             id = party_responses(name, able_to_attend, filename)
             print(f'Thank you! Your response has been recorded. Please make a note of your id number in case you would like to update your response later. Your id number is {id}')
+            break
     if welcome_question == 'u':
         id = input('Please enter your id number:\n')
         if id == 'q':
